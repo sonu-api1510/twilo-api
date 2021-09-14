@@ -31,6 +31,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
+						<server>exchange</server>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.3.0</muleVersion>
 						<username>sonu_api1510a</username>
@@ -88,7 +89,7 @@
 		<repository>
 			<id>anypoint-exchange-v2</id>
 			<name>Anypoint Exchange</name>
-			<url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
+			<url>https://maven.anypoint.mulesoft.com/api/v2/Apisero/9be525ca-2070-48e3-9316-f0b9178b7e1f/maven</url>
 			<layout>default</layout>
 		</repository>
 		<repository>
