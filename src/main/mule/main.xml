@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:twilio="http://www.mulesoft.org/schema/mule/twilio" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/twilio http://www.mulesoft.org/schema/mule/twilio/current/mule-twilio.xsd">
+	<flow name="POST-main-flowFlow" doc:id="cf6a3271-5e2e-4fc4-b199-ebbd48105563" >
+		<ee:transform doc:name="Transform Message" doc:id="d702ba8f-5746-42ac-8baa-42477eb3cb36" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/x-www-form-urlencoded
+---
+{
+	From: attributes.headers.From as String,
+	To: attributes.headers.To as String,
+	Body: payload.sms as String
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<twilio:create20100401-accounts-messagesjson-by-account-sid doc:name="Create Message" doc:id="fec42843-e0a0-4990-a45f-c8feba29692d" accountSid="ACc743d8105cbadc394916ffdde4b3c072" config-ref="Twilio_Connector_Config"/>
+		<ee:transform doc:name="Transform Message" doc:id="a538ae8e-f468-4916-a55c-44ebfb9c0f25" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="1c8e0792-139f-410b-9bb4-9afa838e148d" message="#[payload]"/>
+	</flow>
+</mule>
