@@ -1,0 +1,10 @@
+#%RAML 1.0 SecurityScheme
+type: x-token-authorize
+description: this will make sure you have proper authorization token
+describedBy:
+  headers:
+    Authorization:
+      type: string
+  responses:
+    401:
+      description: 401-Un Authorize access

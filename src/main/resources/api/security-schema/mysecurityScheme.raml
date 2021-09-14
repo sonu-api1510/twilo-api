@@ -1,0 +1,16 @@
+#%RAML 1.0 SecurityScheme
+type: Basic Authentication
+describedBy:
+  headers:
+    client_id:
+      type: string
+    client_secret:
+      type: string
+           
+  responses:
+    401:
+      description: 401-Unauthorized access
+    500:
+      description: 500-Bad Request from unauthorized server
+    200:
+      description: 200-Ok Success

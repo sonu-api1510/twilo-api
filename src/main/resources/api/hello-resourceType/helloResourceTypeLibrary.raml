@@ -1,0 +1,44 @@
+#%RAML 1.0 Library
+
+traits: 
+  errorRespons: !include ../traits/helloTrait.raml
+uses:
+  messageType:  ../dataTypes/messageTypeLibrary.raml
+  
+securitySchemes:
+  clientIDEnforcement: !include ../exchange_modules/332fddef-7e16-4567-b07d-563626dff3dd/customesecurityscheme/1.0.0/customesecurityscheme.raml
+
+types:
+  helloType: !include ../dataTypes/helloWorldDataType.raml
+
+resourceTypes:
+  helloWorldCollection:
+    get?:
+      is: [errorRespons]
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                <<exampleReference1>>
+    post?:
+      is: [errorRespons]
+      securedBy:
+        - clientIDEnforcement
+      headers:
+        To:
+          example: "+14158557316"
+        From: 
+          example: "+918298082521"          
+      body:
+        application/json:
+          type: [messageType.messageType]           
+      responses:
+        201:
+          body:
+            application/json:
+              example: |
+                <<exampleReference2>>
+        
+        
+

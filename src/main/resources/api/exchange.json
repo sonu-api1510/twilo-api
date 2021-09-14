@@ -1,0 +1,1 @@
+{"main":"hello-world.raml","name":"hello-world","classifier":"raml","tags":[],"groupId":"332fddef-7e16-4567-b07d-563626dff3dd","assetId":"hello-world","version":"5.0.0","apiVersion":"v1.5","originalFormatVersion":"1.0","dependencies":[{"groupId":"332fddef-7e16-4567-b07d-563626dff3dd","assetId":"customesecurityscheme","version":"1.0.0"}],"publishWithRefFiles":true}

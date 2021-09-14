@@ -1,0 +1,26 @@
+#%RAML 1.0
+title: hello-world
+
+description: use case 4 Create basicAuth Security Scheme as Fragment Type Create sample hello world raml include basic auth schema Publish the API on Exchange Import into studio , scaffold the API project in studio Provide an implementation and test
+
+protocols:
+  - HTTP
+mediaType: 
+- application/json
+uses:
+  helloResource: hello-resourceType/helloResourceTypeLibrary.raml
+
+/hello:
+  type:
+    {helloResource.helloWorldCollection: {exampleReference1: !include examples/getResponseExample.json, exampleReference2: !include examples/postResponse-example.json}}
+
+  get:    
+  post:
+    
+    
+        
+
+      
+          
+      
+          
