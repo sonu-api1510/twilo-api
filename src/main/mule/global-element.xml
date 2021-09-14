@@ -7,7 +7,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 http://www.mulesoft.org/schema/mule/twilio http://www.mulesoft.org/schema/mule/twilio/current/mule-twilio.xsd">
 	<configuration-properties doc:name="Configuration properties" doc:id="73243082-6c9d-44f2-b944-3e40a9c91463" file="configuration.yaml" />
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="82326ac7-f776-441a-ab12-a5df59da5225" >
-		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<twilio:config name="Twilio_Connector_Config" doc:name="Twilio Connector Config" doc:id="d4cda528-37c2-4166-9e8b-f2f1adcda586" >
 		<twilio:account-sid-auth-token-connection username="${twilo.username}" password="${twilo.pwd}" />
