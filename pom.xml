@@ -114,6 +114,7 @@
 			<url>https://repository.mulesoft.org/releases/</url>
 			<snapshots>
 				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
